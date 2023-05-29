@@ -1,6 +1,6 @@
 import React from "react";
 
-interface ListItemProps {
+export interface ListItemProps {
   name: string;
   quantity: number;
 }
