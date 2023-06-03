@@ -4,5 +4,5 @@ export interface ListItemData {
 }
 
 export function formatQuantity(quantity: number): string {
-  return `${quantity} items`;
+  return `Quantity: ${quantity}`;
 }
