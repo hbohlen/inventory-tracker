@@ -17,7 +17,7 @@ const App: React.FC = () => {
     <>
       <Header />
       <ItemList items={listData} />
-      <NewItemForm />
+
       <AddItemButton />
     </>
   );
