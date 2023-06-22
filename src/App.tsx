@@ -1,24 +1,20 @@
-import React from "react";
+import React, { useState } from 'react';
 
-import Header from "./components/Header";
+import Header from './components/Header';
 
-import ItemList from "./components/ItemList";
+import { itemData } from './data/itemData';
 
-import AddItemButton from "./components/AddItemButton";
+import { ItemList } from './components/ItemList/ItemList';
 
-import NewItemForm from "./components/NewItemForm";
-
-import { listData } from "./data/listData";
-
-import "./styles/global.css";
+import './styles/global.css';
 
 const App: React.FC = () => {
+  const [items, setItems] = useState<Array<Item>>(itemData);
   return (
     <>
       <Header />
-      <ItemList items={listData} />
 
-      <AddItemButton />
+      <ItemList items={items} />
     </>
   );
 };
