@@ -2,25 +2,34 @@ import React, { useState } from 'react';
 
 import Header from './components/Header';
 
-import { itemData } from './data/itemData';
-
-import { ItemList } from './components/ItemList/ItemList';
-
-import { AddItemForm } from './components/AddItem/AddItemForm';
+import { Item } from './components/Item';
 
 import './styles/global.css';
 
-
 const App: React.FC = () => {
-  const [items, setItems] = useState<Array<Item>>(itemData);
-  
+  const showItems = true;
+
   return (
     <>
       <Header />
-
-      <ItemList items={items} />
-
-      <AddItemForm />
+      {showItems ? (
+        <>
+          <div className="flex flex-wrap">
+            <Item name={'Item 1'} quantity={5} />
+            <Item name={'Item 2'} quantity={10} />
+            <Item name={'Item 1'} quantity={5} />
+            <Item name={'Item 2'} quantity={10} />
+            <Item name={'Item 1'} quantity={5} />
+            <Item name={'Item 2'} quantity={10} />
+            <Item name={'Item 1'} quantity={5} />
+            <Item name={'Item 2'} quantity={10} />
+            <Item name={'Item 1'} quantity={5} />
+            <Item name={'Item 2'} quantity={10} />
+          </div>
+        </>
+      ) : (
+        <p>No Items</p>
+      )}
     </>
   );
 };
